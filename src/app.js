@@ -3,31 +3,27 @@ import "bootstrap";
 import "./style.css";
 
 window.onload = () => {
-  document.querySelector("#excuseButton").addEventListener("click", () => {
-    document.querySelector("#the-excuse").innerHTML = generateExcuse();
+  document.querySelector("#eGenerator").addEventListener("click", () => {
+    document.getElementById("excuse").innerHTML = generateExcuse();
   });
 };
-let generateExcuse = () => {
-  let pro = ["A", "The"];
-  let subj = ["jogger", "racoon", "driver", "dog", "comedian", "pinecone"];
-  let act = ["took my", "threw my", "yelled at my", "stole my", "bit my"];
-  let pos = ["toe", "homework", "car", "shoe"];
-  let wh = ["on the street", "in my house", "in my driveway"];
 
-  let proIndex = Math.floor(Math.random() * pro.length);
-  let subIndex = Math.floor(Math.random() * subj.length);
-  let actIndex = Math.floor(Math.random() * act.length);
-  let posIndex = Math.floor(Math.random() * pos.length);
-  let whIndex = Math.floor(Math.random() * wh.length);
-  return (
-    pro[proIndex] +
-    " " +
-    subj[subIndex] +
-    " " +
-    act[actIndex] +
-    " " +
-    pos[posIndex] +
-    " " +
-    wh[whIndex]
-  );
+let generateExcuse = () => {
+  let who = ["The dog", "My grandma", "His turtle", "My bird"];
+  let action = ["ate", "peed", "crushed", "broke"];
+  let what = ["my homework", "the keys", "the car"];
+  let when = [
+    "before the class",
+    "right on time",
+    "when I finished",
+    "during my lunch",
+    "while I was praying"
+  ];
+
+  let whoIndex = Math.floor(Math.random() * who.length);
+  let actionIndex = Math.floor(Math.random() * action.length);
+  let whatIndex = Math.floor(Math.random() * what.length);
+  let whenIndex = Math.floor(Math.random() * when.length);
+
+  return `${who[whoIndex]} ${action[actionIndex]} ${what[whatIndex]} ${when[whenIndex]}`;
 };
